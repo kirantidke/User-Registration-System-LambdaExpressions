@@ -6,32 +6,31 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @FunctionalInterface
-interface FirstName {
-	void firstNameValidate();
+interface LastName {
+	void lastNameValidate();
 }
 
 public class UserRegistration {
 
 	public static void main(String[] args) {
 		// Lambda -> operator uses
-		FirstName fName = () -> {
+		LastName lName = () -> {
 			Scanner sc = new Scanner(System.in);
 
 			String regex = "^[A-Z]{1}[a-z]{3,20}$";
 
-			System.out.println("Enter your name");
+			System.out.println("Enter your last name");
 			String name = sc.next();
 
 			Pattern pattern = Pattern.compile(regex);
 			Matcher matcher = pattern.matcher(name);
 			if (matcher.matches()) {
-				System.out.println("Given name id is valid");
+				System.out.println("Given last name id is valid");
 			} else {
-				System.out.println("Given name id is not valid");
+				System.out.println("Given last name id is not valid");
 			}
 		};
-		fName.firstNameValidate();
+		lName.lastNameValidate();
 
 	}
-
 }
