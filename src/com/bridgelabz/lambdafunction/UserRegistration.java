@@ -6,31 +6,31 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @FunctionalInterface
-interface EmailId {
-	void emailValidate();
+interface User {
+	void mobileValidate();
 }
 
 public class UserRegistration {
 
 	public static void main(String[] args) {
 		// Lambda -> operator uses
-		EmailId eMail = () -> {
-			 Scanner sc = new Scanner(System.in);
+		User user = () -> {
+			Scanner sc = new Scanner(System.in);
 
-	            String regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+			String regex = "^(91){1}[0-9]{9}$";
 
-	            System.out.println("Enter your Email id");
-	            String email = sc.next();
+			System.out.println("Enter your Mobile number");
+			String email = sc.next();
 
-	            Pattern pattern = Pattern.compile(regex);
-	            Matcher matcher = pattern.matcher(email);
-	            if(matcher.matches()){
-	                System.out.println("Given email id is valid");
-	            }else{
-	                System.out.println("Given email id is not valid");
-	            }
-	        };
-		eMail.emailValidate();
+			Pattern pattern = Pattern.compile(regex);
+			Matcher matcher = pattern.matcher(email);
+			if (matcher.matches()) {
+				System.out.println("Given mobile number is valid");
+			} else {
+				System.out.println("Given mobile number. is not valid");
+			}
+		};
+		user.mobileValidate();
 
 	}
 }
