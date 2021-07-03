@@ -31,7 +31,5 @@ public class UserRegistration {
 			}
 		};
 		fName.firstNameValidate();
-
 	}
-
 }
